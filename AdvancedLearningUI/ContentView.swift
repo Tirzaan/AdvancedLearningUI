@@ -12,7 +12,11 @@ struct ContentView: View {
         NavigationStack {
             List {
                 NavigationLink("Custom View Modifiers") {
-                    
+                    ViewModifierLesson()
+                }
+                
+                NavigationLink("Custom Button Styles") {
+                    ButtonStyleLesson()
                 }
             }
         }
