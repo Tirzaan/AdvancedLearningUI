@@ -7,45 +7,47 @@
 
 import SwiftUI
 
-struct A_Shape: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        
-        // MARK: - Define relative points for flexibility
-        let width = rect.width
-        let height = rect.height
-        
-        // Coordinates are normalized so the shape scales properly.
-        let top = CGPoint(x: 0.5 * width, y: 0.0)             // Top point of "A"
-        let bottomLeft = CGPoint(x: 0.1 * width, y: height)   // Bottom left leg
-        let bottomRight = CGPoint(x: 0.9 * width, y: height)  // Bottom right leg
-        let crossbarLeft = CGPoint(x: 0.3 * width, y: 0.55 * height)
-        let crossbarRight = CGPoint(x: 0.7 * width, y: 0.55 * height)
-        let innerLeft = CGPoint(x: 0.4 * width, y: 0.4 * height)
-        let innerRight = CGPoint(x: 0.6 * width, y: 0.4 * height)
-        
-        // MARK: - Draw outer "A" triangle shape
-        path.move(to: bottomLeft)
-        path.addLine(to: top)
-        path.addLine(to: bottomRight)
-        path.addLine(to: CGPoint(x: 0.78 * width, y: 0.75 * height))
-        path.addLine(to: CGPoint(x: 0.22 * width, y: 0.75 * height))
-        path.closeSubpath()
-        
-        // MARK: - Subtract the "hole" inside the A
-        var innerPath = Path()
-        innerPath.move(to: innerLeft)
-        innerPath.addLine(to: crossbarLeft)
-        innerPath.addLine(to: crossbarRight)
-        innerPath.addLine(to: innerRight)
-        innerPath.closeSubpath()
-        
-        // Combine main path minus inner
-        path.addPath(innerPath)
-        
-        return path
-    }
-}
+/*
+//struct A_Shape: Shape {
+//    func path(in rect: CGRect) -> Path {
+//        var path = Path()
+//        
+//        // - Define relative points for flexibility
+//        let width = rect.width
+//        let height = rect.height
+//        
+//        // Coordinates are normalized so the shape scales properly.
+//        let top = CGPoint(x: 0.5 * width, y: 0.0)             // Top point of "A"
+//        let bottomLeft = CGPoint(x: 0.1 * width, y: height)   // Bottom left leg
+//        let bottomRight = CGPoint(x: 0.9 * width, y: height)  // Bottom right leg
+//        let crossbarLeft = CGPoint(x: 0.3 * width, y: 0.55 * height)
+//        let crossbarRight = CGPoint(x: 0.7 * width, y: 0.55 * height)
+//        let innerLeft = CGPoint(x: 0.4 * width, y: 0.4 * height)
+//        let innerRight = CGPoint(x: 0.6 * width, y: 0.4 * height)
+//        
+//        // - Draw outer "A" triangle shape
+//        path.move(to: bottomLeft)
+//        path.addLine(to: top)
+//        path.addLine(to: bottomRight)
+//        path.addLine(to: CGPoint(x: 0.78 * width, y: 0.75 * height))
+//        path.addLine(to: CGPoint(x: 0.22 * width, y: 0.75 * height))
+//        path.closeSubpath()
+//        
+//        // - Subtract the "hole" inside the A
+//        var innerPath = Path()
+//        innerPath.move(to: innerLeft)
+//        innerPath.addLine(to: crossbarLeft)
+//        innerPath.addLine(to: crossbarRight)
+//        innerPath.addLine(to: innerRight)
+//        innerPath.closeSubpath()
+//        
+//        // Combine main path minus inner
+//        path.addPath(innerPath)
+//        
+//        return path
+//    }
+//}
+ */
 
 struct Triangle: Shape {
     nonisolated func path(in rect: CGRect) -> Path {
@@ -106,11 +108,11 @@ struct CustomShapesLesson: View {
 //            Diamond()
 //                .frame(width: 300, height: 300)
             
-//            Trapezoid()
-//                .frame(width: 300, height: 150)
+            Trapezoid()
+                .frame(width: 300, height: 150)
             
-            A_Shape()
-                .frame(width: 300, height: 300)
+//            A_Shape()
+//                .frame(width: 300, height: 300)
         }
     }
 }
