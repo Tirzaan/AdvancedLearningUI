@@ -7,38 +7,80 @@
 
 import SwiftUI
 
-struct MGIImage: View {
-    let category: String
-    let imageName: String
-    let aspectContentMode: ContentMode = .fill
+struct ContentView: View {
+    @State private var path = NavigationPath()
     
     var body: some View {
-        AsyncImage(url: URL(string: "https://firebasestorage.googleapis.com/v0/b/fun-with-languages.firebasestorage.app/o/Images%2FMatchingGame%2F\(category)%2FMGI-945-\(imageName).png?alt=media&token=2c503f6f-d1e0-4415-a8ab-b9d2d5be608c")) { image in
-            if let image = image.image {
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: aspectContentMode)
+        NavigationStack(path: $path) {
+            List {
+                Button("1. Custom View Modifiers") {
+                    path.append("Custom View Modifiers")
+                }
+                
+                Button("2. Custom Button Styles") {
+                    path.append("Custom Button Styles")
+                }
+                
+                Button("3. Custom Transitions") {
+                    path.append("Custom Transitions")
+                }
+                
+                Button("4. Matched Geometry Effect") {
+                    path.append("Matched Geometry Effect")
+                }
+                
+                Button("5. Custom Shapes") {
+                    path.append("Custom Shapes")
+                }
+                
+                Button("6. Custom Curved Shapes") {
+                    path.append("Custom Curved Shapes")
+                }
+                
+                Button("7. Animateable Data With Shapes") {
+                    path.append("Animateable Data With Shapes")
+                }
+                
+                Button("8. Generics") {
+                    path.append("Generics")
+                }
+                
+                Button("9. View Builder") {
+                    path.append("View Builder")
+                }
+                
+                Button("10. Preference Key") {
+                    path.append("Preference Key")
+                }
+            }
+            .tint(.black)
+            .navigationTitle("Lessons")
+            .navigationDestination(for: String.self) { value in
+                if value == "Custom View Modifiers" {
+                    ViewModifierLesson()
+                } else if value == "Custom Button Styles" {
+                    ButtonStyleLesson()
+                } else if value == "Custom Transitions" {
+                    AnyTransitionLesson()
+                } else if value == "Matched Geometry Effect" {
+                    MatchedGeometryEffectLesson()
+                } else if value == "Custom Shapes" {
+                    CustomShapesLesson()
+                } else if value == "Custom Curved Shapes" {
+                    CustomCurvedShapesLesson()
+                } else if value == "Animateable Data With Shapes" {
+                    AnimateableDataWithShapes()
+                } else if value == "Generics" {
+                    GenericsLesson()
+                } else if value == "View Builder" {
+                    ViewBuilderLesson()
+                } else if value == "Preference Key" {
+                    ScrollViewOffsetPreferanceKeyLesson()
+                } else {
+                    Text("Unknown Destination")
+                }
             }
         }
-    }
-}
-
-struct ContentView: View {
-    var body: some View {
-//        NavigationStack {
-//            List {
-//                NavigationLink("Custom View Modifiers") {
-//                    ViewModifierLesson()
-//                }
-//                
-//                NavigationLink("Custom Button Styles") {
-//                    ButtonStyleLesson()
-//                }
-//            }
-//        }
-        
-        MGIImage(category: "Animals", imageName: "Fish")
-            .frame(width: 400, height: 400)
     }
 }
 
