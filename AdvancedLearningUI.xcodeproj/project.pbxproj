@@ -6,8 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		9994641E2F0CC2370001F607 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9930FE6F2EBD5AB600CFF081 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9930FE762EBD5AB600CFF081;
+			remoteInfo = AdvancedLearningUI;
+		};
+		9994642B2F0CC2990001F607 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9930FE6F2EBD5AB600CFF081 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9930FE762EBD5AB600CFF081;
+			remoteInfo = AdvancedLearningUI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		9930FE772EBD5AB700CFF081 /* AdvancedLearningUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedLearningUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9994641A2F0CC2370001F607 /* AdvancedLearningUI_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedLearningUI_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		999464272F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedLearningUI_Swift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +35,34 @@
 			path = AdvancedLearningUI;
 			sourceTree = "<group>";
 		};
+		9994641B2F0CC2370001F607 /* AdvancedLearningUI_Tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AdvancedLearningUI_Tests;
+			sourceTree = "<group>";
+		};
+		999464282F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AdvancedLearningUI_Swift_Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9930FE742EBD5AB600CFF081 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999464172F0CC2370001F607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999464242F0CC2990001F607 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				9930FE792EBD5AB700CFF081 /* AdvancedLearningUI */,
+				9994641B2F0CC2370001F607 /* AdvancedLearningUI_Tests */,
+				999464282F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests */,
 				9930FE782EBD5AB700CFF081 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				9930FE772EBD5AB700CFF081 /* AdvancedLearningUI.app */,
+				9994641A2F0CC2370001F607 /* AdvancedLearningUI_Tests.xctest */,
+				999464272F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +117,52 @@
 			productReference = 9930FE772EBD5AB700CFF081 /* AdvancedLearningUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		999464192F0CC2370001F607 /* AdvancedLearningUI_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 999464202F0CC2370001F607 /* Build configuration list for PBXNativeTarget "AdvancedLearningUI_Tests" */;
+			buildPhases = (
+				999464162F0CC2370001F607 /* Sources */,
+				999464172F0CC2370001F607 /* Frameworks */,
+				999464182F0CC2370001F607 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9994641F2F0CC2370001F607 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9994641B2F0CC2370001F607 /* AdvancedLearningUI_Tests */,
+			);
+			name = AdvancedLearningUI_Tests;
+			packageProductDependencies = (
+			);
+			productName = AdvancedLearningUI_Tests;
+			productReference = 9994641A2F0CC2370001F607 /* AdvancedLearningUI_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		999464262F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9994642D2F0CC2990001F607 /* Build configuration list for PBXNativeTarget "AdvancedLearningUI_Swift_Tests" */;
+			buildPhases = (
+				999464232F0CC2990001F607 /* Sources */,
+				999464242F0CC2990001F607 /* Frameworks */,
+				999464252F0CC2990001F607 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9994642C2F0CC2990001F607 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				999464282F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests */,
+			);
+			name = AdvancedLearningUI_Swift_Tests;
+			packageProductDependencies = (
+			);
+			productName = AdvancedLearningUI_Swift_Tests;
+			productReference = 999464272F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -77,11 +170,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2610;
+				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					9930FE762EBD5AB600CFF081 = {
 						CreatedOnToolsVersion = 26.1;
+					};
+					999464192F0CC2370001F607 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 9930FE762EBD5AB600CFF081;
+					};
+					999464262F0CC2990001F607 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 9930FE762EBD5AB600CFF081;
 					};
 				};
 			};
@@ -100,12 +201,28 @@
 			projectRoot = "";
 			targets = (
 				9930FE762EBD5AB600CFF081 /* AdvancedLearningUI */,
+				999464192F0CC2370001F607 /* AdvancedLearningUI_Tests */,
+				999464262F0CC2990001F607 /* AdvancedLearningUI_Swift_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9930FE752EBD5AB600CFF081 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999464182F0CC2370001F607 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999464252F0CC2990001F607 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +239,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		999464162F0CC2370001F607 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999464232F0CC2990001F607 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9994641F2F0CC2370001F607 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9930FE762EBD5AB600CFF081 /* AdvancedLearningUI */;
+			targetProxy = 9994641E2F0CC2370001F607 /* PBXContainerItemProxy */;
+		};
+		9994642C2F0CC2990001F607 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9930FE762EBD5AB600CFF081 /* AdvancedLearningUI */;
+			targetProxy = 9994642B2F0CC2990001F607 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9930FE802EBD5ABA00CFF081 /* Debug */ = {
@@ -310,6 +454,94 @@
 			};
 			name = Release;
 		};
+		999464212F0CC2370001F607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZF8P9WP3C5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Imaginator1.AdvancedLearningUI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvancedLearningUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdvancedLearningUI";
+			};
+			name = Debug;
+		};
+		999464222F0CC2370001F607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZF8P9WP3C5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Imaginator1.AdvancedLearningUI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvancedLearningUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdvancedLearningUI";
+			};
+			name = Release;
+		};
+		9994642E2F0CC2990001F607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZF8P9WP3C5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Imaginator1.AdvancedLearningUI-Swift-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvancedLearningUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdvancedLearningUI";
+			};
+			name = Debug;
+		};
+		9994642F2F0CC2990001F607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZF8P9WP3C5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Imaginator1.AdvancedLearningUI-Swift-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvancedLearningUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdvancedLearningUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -327,6 +559,24 @@
 			buildConfigurations = (
 				9930FE832EBD5ABA00CFF081 /* Debug */,
 				9930FE842EBD5ABA00CFF081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		999464202F0CC2370001F607 /* Build configuration list for PBXNativeTarget "AdvancedLearningUI_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				999464212F0CC2370001F607 /* Debug */,
+				999464222F0CC2370001F607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9994642D2F0CC2990001F607 /* Build configuration list for PBXNativeTarget "AdvancedLearningUI_Swift_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9994642E2F0CC2990001F607 /* Debug */,
+				9994642F2F0CC2990001F607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
