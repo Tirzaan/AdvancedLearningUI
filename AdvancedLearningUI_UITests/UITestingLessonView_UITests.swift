@@ -7,33 +7,143 @@
 
 import XCTest
 
+// Naming Structure: test_UnitOfWork_StateUnderTest_ExpectedBehavior
+// Naming Structure: test_[struct]_[UI component]_[expected result]
+// Testing Structure: Given, When, Than
+
+
 final class UITestingLessonView_UITests: XCTestCase {
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+//        app.launchArguments = ["-UITest_startSignedIn"]
+        app.launch()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // Sign Up Button
+    func test_UITestingLessonView_SignUpButton_shouldNotSignUp() {
+        // Given
+        signUp(shouldTypeOnKeyboard: false)
+        
+        // When
+        let navBar = app.navigationBars["Welcome"]
+        
+        // Than
+        XCTAssertFalse(navBar.exists)
     }
+    
+    func test_UITestingLessonView_SignUpButton_shouldSignUp() {
+        // Given
+        signUp(shouldTypeOnKeyboard: true)
+        
+        // When
+        let navBar = app.navigationBars["Welcome"]
+        
+        // Than
+        XCTAssertTrue(navBar.exists)
+    }
+    
+    // Show Welcome Alert Button
+    func test_signedInHomeView_showWelcomeAlertButton_shouldDisplayAlert() {
+        // Given
+        signUp(shouldTypeOnKeyboard: true)
+        
+        // When
+        tapAlertButton(shouldDismissAlert: false)
+        
+        // Than
+        let alert = app.alerts["Welcome to the app!"]
+        XCTAssertTrue(alert.exists)
+    }
+    
+    func test_signedInHomeView_showWelcomeAlertButton_shouldDisplayAndDismissAlert() {
+        // Given
+        signUp(shouldTypeOnKeyboard: true)
+        
+        // When
+        tapAlertButton(shouldDismissAlert: true)
+        
+        // Than
+        let alert = app.alerts["Welcome to the app!"]
+        XCTAssertFalse(alert.exists)
+    }
+    
+    // Navigate to Profile Button
+    func test_signedInHomeView_navigateToProfileButton_shouldNavigateToProfileView() {
+        // Given
+        signUp(shouldTypeOnKeyboard: true)
+        
+        // When
+        tapProfileNavigationButton(shouldDismissScreen: false)
+        
+        // Than
+        let profileScreen = app.staticTexts["Profile Screen"].firstMatch
+        XCTAssertTrue(profileScreen.exists)
+    }
+    
+    func test_signedInHomeView_navigateToProfileButton_shouldNavigateToAndFromProfileView() {
+        // Given
+        signUp(shouldTypeOnKeyboard: true)
+        
+        // When
+        tapProfileNavigationButton(shouldDismissScreen: true)
+        
+        // Than
+        let navBar = app.navigationBars["Welcome"]
+        XCTAssertTrue(navBar.exists)
+    }
+    
+    
+    // USE WITH THE launchArguments UNCOMMENTED (in the init)
+//    func test_signedInHomeView_navigateToProfileButton_shouldNavigateToAndFromProfileViewWithSignedIn() {
+//        // Given
+//        
+//        // When
+//        tapProfileNavigationButton(shouldDismissScreen: true)
+//        
+//        // Than
+//        let navBar = app.navigationBars["Welcome"]
+//        XCTAssertTrue(navBar.exists)
+//    }
+}
 
-    func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
-        measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
+// MARK: FUNCTIONS
+extension UITestingLessonView_UITests {
+    func signUp(shouldTypeOnKeyboard: Bool) {
+        let textField = app.textFields["Sign Up TextField"]
+        textField.tap()
+        
+        if shouldTypeOnKeyboard {
+            app.keys["B"].firstMatch.tap()
+            app.keys["o"].firstMatch.tap()
+            app.keys["b"].firstMatch.tap()
+        }
+        
+        app.buttons["Return"].firstMatch.tap()
+        
+        app.buttons["Sign Up Button"].firstMatch.tap()
+    }
+    
+    func tapAlertButton(shouldDismissAlert: Bool) {
+        let showAlertButton = app.buttons["Show Welcome Alert Button"]
+        showAlertButton.tap()
+        
+        if shouldDismissAlert {
+            let dismissButton = app.buttons["OK"]
+            dismissButton.tap()
+        }
+    }
+    
+    func tapProfileNavigationButton(shouldDismissScreen: Bool) {
+        app.buttons["Navigate to Profile Button"].firstMatch.tap()
+        
+        if shouldDismissScreen {
+            app.buttons["BackButton"].firstMatch.tap()
         }
     }
 }
