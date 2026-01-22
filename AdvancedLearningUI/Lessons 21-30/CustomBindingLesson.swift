@@ -33,6 +33,8 @@ struct CustomBindingLesson: View {
                 Text(title)
             }
             
+    
+            
             HStack(spacing: 0) {
                 Text("Child View: ")
                     .fontWeight(.black)
