@@ -19,7 +19,8 @@ struct AdvancedLearningUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            UITestingLessonView(userIsSignedIn: currentUserIsSignedIn)
+//            UITestingLessonView(userIsSignedIn: currentUserIsSignedIn)
+            ContentView()
         }
     }
 }

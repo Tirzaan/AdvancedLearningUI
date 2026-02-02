@@ -52,6 +52,10 @@ struct ContentView: View {
                 Button("10. Preference Key") {
                     path.append("Preference Key")
                 }
+                
+                Button("Property Wrapper") {
+                    path.append("Property Wrapper")
+                }
             }
             .tint(.black)
             .navigationTitle("Lessons")
@@ -76,6 +80,8 @@ struct ContentView: View {
                     ViewBuilderLesson()
                 } else if value == "Preference Key" {
                     ScrollViewOffsetPreferanceKeyLesson()
+                } else if value == "Property Wrapper" {
+                    PropertyWrapperLesson()
                 } else {
                     Text("Unknown Destination")
                 }
