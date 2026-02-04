@@ -56,6 +56,10 @@ struct ContentView: View {
                 Button("Property Wrapper") {
                     path.append("Property Wrapper")
                 }
+                
+                Button("Property Wrapper Implantation") {
+                    path.append("Property Wrapper Implantation")
+                }
             }
             .tint(.black)
             .navigationTitle("Lessons")
@@ -82,6 +86,8 @@ struct ContentView: View {
                     ScrollViewOffsetPreferanceKeyLesson()
                 } else if value == "Property Wrapper" {
                     PropertyWrapperLesson()
+                } else if value == "Property Wrapper Implantation" {
+                    PropertyWrapperImplantation()
                 } else {
                     Text("Unknown Destination")
                 }
