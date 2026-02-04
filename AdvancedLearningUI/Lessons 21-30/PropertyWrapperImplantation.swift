@@ -211,7 +211,7 @@ struct PropertyWrapperImplantation: View {
             SomeBindingView(userProfile: $combineUserProfile.binding)
             
             Button(combineUserProfile?.name ?? "No Value") {
-                combineUserProfile = User(name: "Victoria Neil", age: 16, isPremium: true)
+                combineUserProfile = User(name: "Victoria Colvin", age: 16, isPremium: true)
             }
         }
         .onReceive($combineUserProfile.publisher, perform: { newValue in
